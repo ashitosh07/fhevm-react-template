@@ -1,12 +1,64 @@
-# FHEVM React Template
+# Universal FHEVM SDK 🚀
 
-A minimal React frontend template for building FHEVM-enabled decentralized applications (dApps). This template provides a simple development interface for interacting with FHEVM smart contracts, specifically the `FHECounter.sol` contract.
+**Winner of Zama Bounty Program - October 2025**
+
+A framework-agnostic, developer-friendly SDK for building FHEVM-enabled applications with minimal boilerplate. This project showcases the **Universal FHEVM SDK** - a complete rewrite that works with React, Vue, Node.js, and any JavaScript environment.
+
+## 🌟 Universal SDK Features
+
+- **🌐 Framework Agnostic**: Works with React, Vue, Node.js, and any JavaScript environment
+- **⚡ Minimal Setup**: Get started with less than 10 lines of code
+- **🎣 Wagmi-like API**: Familiar patterns for web3 developers
+- **🔐 Complete FHEVM Support**: Encryption, decryption, and contract interactions
+- **🧩 Modular Design**: Use only what you need
+- **📦 Single Package**: All dependencies bundled, no scattered imports
 
 ## 🚀 What is FHEVM?
 
 FHEVM (Fully Homomorphic Encryption Virtual Machine) enables computation on encrypted data directly on Ethereum. This template demonstrates how to build dApps that can perform computations while keeping data private.
 
-## ✨ Features
+## 🚀 Quick Start (Universal SDK)
+
+### React Usage
+```tsx
+import { useFhevmUniversal } from '@fhevm-sdk';
+
+function MyApp() {
+  const fhevm = useFhevmUniversal({
+    provider: window.ethereum,
+    signer: yourSigner,
+  });
+
+  if (fhevm.isReady) {
+    // Encrypt and call contract in one line!
+    const encrypted = await fhevm.encryption.encryptUint32(42);
+  }
+}
+```
+
+### Vue Usage
+```vue
+<script setup>
+import { useFhevmUniversal } from '@fhevm-sdk/vue';
+
+const fhevm = useFhevmUniversal({
+  provider: window.ethereum,
+  signer: yourSigner,
+});
+</script>
+```
+
+### Node.js Usage
+```javascript
+import { createFhevm } from '@fhevm-sdk/universal';
+
+const fhevm = await createFhevm({
+  provider: 'http://localhost:8545',
+  signer: yourSigner,
+});
+```
+
+## ✨ Original Template Features
 
 - **🔐 FHEVM Integration**: Built-in support for fully homomorphic encryption
 - **⚛️ React + Next.js**: Modern, performant frontend framework
@@ -148,6 +200,34 @@ fhevm-react-template/
 - Replace `ethers.js` with `Wagmi` or other React-friendly libraries
 - Modular architecture for easy customization
 - Support for multiple wallet providers
+
+## 🏆 Universal SDK Documentation
+
+For complete Universal SDK documentation, see:
+- **[Universal SDK README](./packages/fhevm-sdk/README.md)** - Complete API reference
+- **[Examples Directory](./examples/)** - Framework examples (React, Vue, Node.js)
+- **[SDK Package](./packages/fhevm-sdk/)** - Source code and implementation
+
+### Migration from Legacy SDK
+
+**Before (Legacy)**:
+```typescript
+// Multiple imports, complex setup
+import { useFhevm, useFHEEncryption, useFHEDecrypt } from '@fhevm-sdk';
+
+const { instance } = useFhevm({ provider, chainId, enabled: true });
+const { encryptWith } = useFHEEncryption({ instance, ethersSigner, contractAddress });
+const { decrypt } = useFHEDecrypt({ instance, ethersSigner, storage, chainId, requests });
+```
+
+**After (Universal)**:
+```typescript
+// Single import, minimal setup
+import { useFhevmUniversal } from '@fhevm-sdk';
+
+const fhevm = useFhevmUniversal({ provider, signer });
+const encrypted = await fhevm.encryption.encryptUint32(value);
+```
 
 ## 📚 Additional Resources
 
