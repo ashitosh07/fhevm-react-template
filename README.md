@@ -265,9 +265,9 @@ const encrypted = await fhevm.encryption.encryptUint32(value);
 
 | Deliverable | Link | Status |
 |-------------|------|--------|
-| 🎬 **Video Walkthrough** | [ADD YOUR VIDEO LINK HERE] | ✅ Complete |
+| 🎬 **Video Walkthrough** | https://www.youtube.com/watch?v=2xrIAEhhd5Q | ✅ Complete |
 | 📚 **GitHub Repository** | https://github.com/ashitosh07/fhevm-react-template | ✅ Complete |
-| 🌐 **Live Demo** | [Deployment in progress] | ⚠️ Pending |
+| 🌐 **Live Demo** | https://fhevm-react-template-nextjs-seven.vercel.app/
 | 📖 **SDK Documentation** | [packages/fhevm-sdk/README.md](packages/fhevm-sdk/README.md) | ✅ Complete |
 | 💻 **Framework Examples** | [examples/](examples/) | ✅ Complete |
 | 🏆 **Requirements Checklist** | [BOUNTY_REQUIREMENTS_CHECKLIST.md](BOUNTY_REQUIREMENTS_CHECKLIST.md) | ✅ Complete |
